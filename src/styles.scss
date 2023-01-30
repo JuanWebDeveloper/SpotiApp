@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// Font Import
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// General Styles
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: #010118;
+  overflow-x: hidden;
+}
