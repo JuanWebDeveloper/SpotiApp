@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
+// Mapped Of Data
+import { SpotifyApiMapper } from '../mapper/spotify-api.mapper';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SpotifyApiService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private spotifyApiMapper: SpotifyApiMapper
+  ) {}
 
+  /**
+   * Centralized consultation
+   * @param queryParams
+   * @returns The running get method
+   */
   query(queryParams: string) {
     const rootUrl = 'https://api.spotify.com/v1/';
 
@@ -19,11 +29,15 @@ export class SpotifyApiService {
     return this.http.get(rootUrl + queryParams, { headers });
   }
 
+  /**
+   * Bring latest album releases
+   * @returns New albums released
+   */
   public getNewAlbumReleases() {
     return this.query('browse/new-releases?limit=21').pipe(
-      map((data: any) => {
-        return data.albums.items;
-      })
+      map((response: any) =>
+        this.spotifyApiMapper.mapNewAlbumReleases(response.albums.items)
+      )
     );
   }
 }

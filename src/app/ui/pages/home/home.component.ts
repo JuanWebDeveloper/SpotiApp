@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // Spotify Api Services
-import { SpotifyApiService } from 'src/app/services/spotify-api.service';
+import { SpotifyApiService } from 'src/app/core/services/spotify-api.service';
 
 @Component({
   selector: 'spoti-home',
@@ -13,7 +13,6 @@ export class HomeComponent {
   constructor(private spotifyApiService: SpotifyApiService) {
     this.spotifyApiService.getNewAlbumReleases().subscribe((data: any) => {
       this.newAlbumsRelases = data;
-      console.log(data);
     });
   }
 }
