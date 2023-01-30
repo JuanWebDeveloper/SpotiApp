@@ -6,9 +6,15 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { CardsComponent } from './shared/cards/cards.component';
 
 @NgModule({
-  declarations: [LayoutComponent, HomeComponent, NavbarComponent],
+  declarations: [
+    LayoutComponent,
+    HomeComponent,
+    NavbarComponent,
+    CardsComponent,
+  ],
   imports: [BrowserModule, CommonModule, RouterModule],
 })
 export class ComponentsModule {}
