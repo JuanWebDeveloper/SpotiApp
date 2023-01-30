@@ -1,16 +1,11 @@
 <div class="cards">
   <div class="card">
     <div class="img-box">
-      <img
-        src="https://image.brigitte.de/13388718/t/jz/v1/w1440/r1.5/-/11--singer-songwriter-haelt-dem-regen-in-muenchen-stand---1-1---spoton-article-1029565.jpg"
-        alt=""
-        srcset=""
-      />
+      <img [src]="albums.images" [alt]="albums.name" />
     </div>
     <div class="details">
       <div class="details-header">
-        <h3 class="title">ed sheeran</h3>
-        <h3 class="sub-title">Perfect</h3>
+        <h3 class="title">{{ albums.name }}</h3>
       </div>
       <div class="details-body">
         <p>

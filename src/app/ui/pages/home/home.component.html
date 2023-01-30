@@ -1,1 +1,4 @@
-<spoti-cards *ngFor="let album of newAlbumsRelases"></spoti-cards>
+<spoti-cards
+  *ngFor="let album of newAlbumsRelases"
+  [albums]="album"
+></spoti-cards>
