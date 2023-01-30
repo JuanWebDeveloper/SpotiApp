@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 // All Components
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +16,6 @@ import { CardsComponent } from './shared/cards/cards.component';
     NavbarComponent,
     CardsComponent,
   ],
-  imports: [BrowserModule, CommonModule, RouterModule],
+  imports: [BrowserModule, CommonModule, RouterModule, HttpClientModule],
 })
 export class ComponentsModule {}
