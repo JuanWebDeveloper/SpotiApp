@@ -1,20 +1,33 @@
 <div class="cards">
   <div class="card">
     <div class="img-box">
-      <img [src]="albums.images" [alt]="albums.name" />
+      <img [src]="albums.images | emptyImage" [alt]="albums.name" />
     </div>
     <div class="details">
       <div class="details-header">
         <h3 class="title">{{ albums.name }}</h3>
+        <h3 class="sub-title">
+          <span>Relase Date:</span> {{ albums.releaseDate }}
+        </h3>
       </div>
       <div class="details-body">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-          quasi. Excepturi praesentium reiciendis ex cumque rem nobis rerum non
-          hic!
-        </p>
+        <span class="musical-notes"><span>♬</span>♫<span>♪</span>♩</span>
+        <iframe
+          [src]="albums.uri | uriSanitizer"
+          width="100%"
+          height="100%"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
       </div>
-      <div class="details-footer"></div>
+      <div class="details-footer">
+        <h3 class="title">
+          {{ albums.artists.length > 1 ? "Artists" : "Artist" }}
+        </h3>
+        <ul class="list-artists">
+          <li *ngFor="let artist of albums.artists">{{ artist.artistName }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

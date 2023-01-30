@@ -14,6 +14,7 @@ export class SpotifyApiMapper {
   public mapAlbum(newAlbum: any): Album {
     return {
       name: newAlbum.name,
+      releaseDate: newAlbum.release_date,
       images: newAlbum.images[0].url,
       uri: newAlbum.uri,
       artists: newAlbum.artists.map((artist: any) => {
