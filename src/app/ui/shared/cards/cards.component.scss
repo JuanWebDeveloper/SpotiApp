@@ -24,6 +24,7 @@
       position: relative;
       transition: all 0.3s ease-out;
       width: 100%;
+      z-index: 1;
 
       img {
         box-shadow: 0 2px 10px rgba($color: #ededed90, $alpha: 0.25);
@@ -32,6 +33,38 @@
         height: 250px;
         transition: all 1s ease-in-out;
         width: 250px;
+      }
+
+      &::after {
+        background: url(../../../../assets/img/decorators/rhombus.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: 0;
+        content: "";
+        height: 150%;
+        right: -30%;
+        opacity: 0.1;
+        position: absolute;
+        transform: rotate(360deg);
+        transition: all 0.3s ease-in;
+        width: 95%;
+        z-index: -1;
+      }
+
+      &::before {
+        background: url(../../../../assets/img/decorators/rhombus.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: "";
+        height: 0%;
+        left: 0;
+        opacity: 0.1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        transition: all 0.3s ease-in;
+        width: 0%;
+        z-index: -1;
       }
     }
 
@@ -141,6 +174,24 @@
           }
         }
       }
+
+      &::before {
+        background: linear-gradient(120deg, #1b1b3020 65%, #1b1b3040 85%);
+        bottom: 0;
+        content: "";
+        height: 0%;
+        mix-blend-mode: soft-light;
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+        transform-origin: bottom left;
+        transform: skew(-30deg, 0deg);
+        width: 0%;
+        -webkit-transform: skew(-30deg, 0deg);
+        -webkit-transform-origin: bottom left;
+      }
     }
 
     &:hover {
@@ -149,6 +200,12 @@
       .details {
         min-width: 55%;
         opacity: 1;
+
+        &::before {
+          height: 100%;
+          opacity: 1;
+          width: 75%;
+        }
       }
 
       .img-box {
@@ -157,6 +214,17 @@
         img {
           border-radius: 15px;
           transform: scale(1.2);
+        }
+
+        &::after {
+          height: 0%;
+          top: -100%;
+          width: 0%;
+        }
+
+        &::before {
+          height: 150%;
+          width: 55%;
         }
       }
     }
@@ -190,6 +258,10 @@
           img {
             height: 250px;
             width: 250px;
+          }
+
+          &::before {
+            height: 100%;
           }
         }
       }
