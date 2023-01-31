@@ -2,18 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // Components
 import { LayoutComponent } from './ui/layout/layout.component';
-import { HomeComponent } from './ui/pages/home/home.component';
 import { NavbarComponent } from './ui/shared/navbar/navbar.component';
+import { HomeComponent } from './ui/pages/home/home.component';
+import { SearchComponent } from './ui/pages/search/search.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: LayoutComponent,
     children: [
       { path: '', component: NavbarComponent, outlet: 'navbar' },
       { path: '', component: HomeComponent },
     ],
   },
+  {
+    path: 'search',
+    component: LayoutComponent,
+    children: [
+      { path: '', component: NavbarComponent, outlet: 'navbar' },
+      { path: '', component: SearchComponent },
+    ],
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
 @NgModule({
