@@ -23,7 +23,7 @@ export class SpotifyApiService {
 
     const headers: HttpHeaders = new HttpHeaders({
       Authorization:
-        'Bearer BQAKJTuLLC9Ih4yJ8-ueouGyJQnFZqRP3lnU57izBI_Q2LaFyKriAYshJdzj2fHvn8mFhWvykON3o5ojbkKC9nZwuFV1iCSsJWWtprRZWAVuNRdQn4el',
+        'Bearer BQAtQKJ0ZqAVSrvUp73NB6LAK8ye37Ml5kPABcaPPx2y0Hp1-34cxzFY3jmPFZ28aA8bkfibB5gxwWONKB6lc3n9b7mhgjS0uAAaN9YRrajqXsUA-ykI',
     });
 
     return this.http.get(rootUrl + queryParams, { headers });
@@ -36,7 +36,6 @@ export class SpotifyApiService {
   public getNewAlbumReleases() {
     return this.query('browse/new-releases?limit=3').pipe(
       map((response: any) => {
-        console.log(response.albums.items);
         return this.spotifyApiMapper.mapNewAlbumReleases(response.albums.items);
       })
     );

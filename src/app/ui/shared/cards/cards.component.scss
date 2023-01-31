@@ -79,11 +79,9 @@
         text-align: center;
 
         .musical-notes {
-          background-color: #01011830;
-          box-shadow: 0 2px 10px rgba($color: #ededed90, $alpha: 0.25);
-          border-radius: 15px;
           color: #ededed80;
           font-size: 2rem;
+          font-weight: 500;
           padding: 0.5rem 2rem;
           text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
 
@@ -162,5 +160,98 @@
         }
       }
     }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      width: 90%;
+
+      .img-box {
+        img {
+          height: 350px;
+          width: 350px;
+        }
+      }
+
+      .details {
+        height: 0;
+        opacity: 0;
+      }
+
+      &:hover {
+        min-height: 1024px;
+
+        .details {
+          height: 100%;
+          min-width: 100%;
+          opacity: 1;
+        }
+
+        .img-box {
+          img {
+            height: 250px;
+            width: 250px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 95%;
+
+      .img-box {
+        img {
+          height: 60%;
+          width: 80%;
+        }
+      }
+
+      .details {
+        &-header {
+          .title {
+            font-size: 2rem;
+          }
+
+          .sub-title {
+            font-size: 1.25rem;
+          }
+        }
+
+        &-body {
+          .musical-notes {
+            font-size: 1.5rem;
+          }
+        }
+
+        &-footer {
+          .title {
+            font-size: 2rem;
+          }
+
+          .list-artists {
+            li {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        min-height: 924px;
+        width: 100%;
+
+        .img-box {
+          img {
+            height: 65%;
+            transform: scale(1);
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    overflow: hidden;
+    padding: 0 1.5rem;
   }
 }
