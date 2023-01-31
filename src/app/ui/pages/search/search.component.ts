@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'spoti-search',
@@ -19,5 +20,14 @@ export class SearchComponent implements OnInit {
    */
   public changeSearchFilter(searchFilter: string): void {
     this.filterSelected = searchFilter;
+  }
+
+  /**
+   * Fetch search results
+   * @param formSearch
+   * @returns Search results
+   */
+  performSearch(formSearch: NgForm) {
+    const { search } = formSearch.value;
   }
 }

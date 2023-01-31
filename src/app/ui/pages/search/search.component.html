@@ -1,8 +1,14 @@
 <div class="search">
   <div class="content">
     <div class="finder-container">
-      <form action="">
-        <input type="text" [placeholder]="'Search By ' + filterSelected" />
+      <form #formSearch="ngForm" (ngSubmit)="performSearch(formSearch)">
+        <input
+          type="text"
+          name="search"
+          ngModel
+          #search="ngModel"
+          [placeholder]="'Search By ' + filterSelected"
+        />
         <button type="submit">Search</button>
       </form>
       <div class="search-filters">

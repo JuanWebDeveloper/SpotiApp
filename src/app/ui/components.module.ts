@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 // Pipes
 import { UriSanitizerPipe } from '../core/pipe/uri-sanitizer.pipe';
 import { EmptyImagePipe } from '../core/pipe/empty-image.pipe';
@@ -23,6 +24,12 @@ import { SearchComponent } from './pages/search/search.component';
     CardsComponent,
     SearchComponent,
   ],
-  imports: [BrowserModule, CommonModule, RouterModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+  ],
 })
 export class ComponentsModule {}
