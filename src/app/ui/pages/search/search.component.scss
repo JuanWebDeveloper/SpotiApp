@@ -86,6 +86,39 @@
           }
         }
       }
+
+      @media (max-width: 1024px) {
+        form {
+          width: 70%;
+
+          input {
+            width: 75%;
+          }
+
+          button {
+            width: 25%;
+          }
+        }
+
+        .search-filters {
+          width: 70%;
+        }
+      }
+
+      @media (max-width: 560px) {
+        form {
+          width: 100%;
+        }
+
+        .search-filters {
+          width: 100%;
+
+          button {
+            font-size: 1.25rem;
+            padding: 0.5rem;
+          }
+        }
+      }
     }
   }
 }
