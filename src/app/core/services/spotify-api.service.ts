@@ -40,4 +40,18 @@ export class SpotifyApiService {
       })
     );
   }
+
+  /**
+   * Find information related to the user's search
+   * @param userSearch
+   * @param searchFilter
+   * @returns Search results
+   */
+  public fetchSearchResults(userSearch: string, searchFilter: string) {
+    return this.query(
+      `search?q=${userSearch}&type=${searchFilter}&limit=21`
+    ).subscribe((results) => {
+      console.log(results);
+    });
+  }
 }

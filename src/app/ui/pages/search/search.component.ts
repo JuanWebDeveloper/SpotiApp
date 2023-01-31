@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+// Spotify Api Services
+import { SpotifyApiService } from 'src/app/core/services/spotify-api.service';
 
 @Component({
   selector: 'spoti-search',
@@ -7,8 +9,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  public searchFilters: string[] = ['Albums', 'Artists', 'Songs'];
-  public filterSelected: string | undefined;
+  public searchFilters: string[] = ['Album', 'Artist', 'Track'];
+  public filterSelected: string = '';
+
+  constructor(private spotifyApiService: SpotifyApiService) {}
 
   ngOnInit(): void {
     this.filterSelected = this.searchFilters[0];
@@ -29,5 +33,10 @@ export class SearchComponent implements OnInit {
    */
   performSearch(formSearch: NgForm) {
     const { search } = formSearch.value;
+
+    this.spotifyApiService.fetchSearchResults(
+      search.toLowerCase(),
+      this.filterSelected.toLowerCase()
+    );
   }
 }
