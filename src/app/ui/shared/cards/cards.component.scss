@@ -35,36 +35,32 @@
         width: 250px;
       }
 
-      &::after {
-        background: url(../../../../assets/img/decorators/rhombus.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        bottom: 0;
-        content: "";
-        height: 150%;
-        right: -30%;
-        opacity: 0.1;
-        position: absolute;
-        transform: rotate(360deg);
-        transition: all 0.3s ease-in;
-        width: 95%;
-        z-index: -1;
-      }
-
+      &::after,
       &::before {
         background: url(../../../../assets/img/decorators/rhombus.svg);
         background-repeat: no-repeat;
         background-size: cover;
         content: "";
-        height: 0%;
-        left: 0;
         opacity: 0.1;
         position: absolute;
+        transition: all 0.3s ease-in;
+        z-index: -1;
+      }
+
+      &::after {
+        bottom: 0;
+        height: 150%;
+        right: -30%;
+        transform: rotate(360deg);
+        width: 95%;
+      }
+
+      &::before {
+        height: 0%;
+        left: 0;
         top: 50%;
         transform: translateY(-50%) rotate(180deg);
-        transition: all 0.3s ease-in;
         width: 0%;
-        z-index: -1;
       }
     }
 
@@ -86,8 +82,8 @@
 
         .title {
           color: #ededed;
-          text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
           font-size: 3rem;
+          text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
           text-transform: capitalize;
         }
 
@@ -108,8 +104,8 @@
         background-color: transparent;
         height: 80px;
         position: relative;
-        width: 95%;
         text-align: center;
+        width: 95%;
 
         .musical-notes {
           color: #ededed80;
@@ -167,8 +163,9 @@
             transition: all 0.3s ease-in;
 
             &:hover {
-              background-color: #01011830;
-              text-shadow: 0 0 3px #ededed40, 0 0 3px #ededed40;
+              background-color: #1b1b30;
+              color: #1ed760;
+              text-shadow: 0 0 3px #1ed76080, 0 0 3px #1ed76080;
               transform: scale(1.09);
             }
           }

@@ -1,0 +1,91 @@
+.search {
+  position: relative;
+
+  .content {
+    position: relative;
+    width: 100%;
+
+    .finder-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 1rem 0;
+      width: 100%;
+
+      form {
+        margin-bottom: 2rem;
+        position: relative;
+        width: 50%;
+
+        input {
+          background-color: #1b1b3090;
+          border: none;
+          color: #ededed;
+          font-size: 1.25rem;
+          font-weight: 500;
+          position: relative;
+          padding: 0.5rem 1rem;
+          text-shadow: 0 0 2px #ededed80, 0 0 2px #ededed80;
+          text-transform: capitalize;
+          transition: all 0.3s ease-in;
+          width: 85%;
+
+          &::placeholder {
+            color: #ededed60;
+            opacity: 0.6;
+            text-shadow: 0 0 1px #ededed80, 0 0 1px #ededed80;
+          }
+
+          &:focus,
+          &:hover {
+            background-color: #1b1b3070;
+            outline: none;
+          }
+        }
+
+        button {
+          background-color: darken($color: #ededed80, $amount: 0.9);
+          border: none;
+          cursor: pointer;
+          color: #ededed;
+          font-size: 1.25rem;
+          font-weight: 500;
+          padding: 0.5rem 0;
+          transition: all 0.3s ease-in;
+          width: 15%;
+
+          &:hover {
+            background-color: darken($color: #ededed40, $amount: 0.5);
+            color: #1ed760;
+          }
+        }
+      }
+
+      .search-filters {
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        width: 50%;
+
+        button {
+          background-color: #1b1b3090;
+          border: none;
+          cursor: pointer;
+          color: #ededed;
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          transition: all 0.3s ease-in;
+
+          &.active,
+          &:hover {
+            background-color: #1b1b30;
+            color: #1ed760;
+            transform: scale(1.12);
+          }
+        }
+      }
+    }
+  }
+}

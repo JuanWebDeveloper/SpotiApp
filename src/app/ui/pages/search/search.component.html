@@ -1,1 +1,19 @@
-<p>search works!</p>
+<div class="search">
+  <div class="content">
+    <div class="finder-container">
+      <form action="">
+        <input type="text" [placeholder]="'Search By ' + filterSelected" />
+        <button type="submit">Search</button>
+      </form>
+      <div class="search-filters">
+        <button
+          *ngFor="let filter of searchFilters"
+          (click)="changeSearchFilter(filter)"
+          [ngClass]="{ active: filterSelected === filter }"
+        >
+          {{ filter }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
