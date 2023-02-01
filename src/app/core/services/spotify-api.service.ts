@@ -35,8 +35,8 @@ export class SpotifyApiService {
    */
   public getNewAlbumReleases() {
     return this.query('browse/new-releases?limit=3').pipe(
-      map((response: any) => {
-        return this.spotifyApiMapper.mapNewAlbumReleases(response.albums.items);
+      map((res: any) => {
+        return this.spotifyApiMapper.mapAlbumsInformation(res.albums.items);
       })
     );
   }
