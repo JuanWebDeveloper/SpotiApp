@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 // Model Of Information
-import { Album } from 'src/app/core/models/Album';
+import { Card } from 'src/app/core/models/Card';
 
 @Component({
   selector: 'spoti-cards',
@@ -8,5 +8,5 @@ import { Album } from 'src/app/core/models/Album';
   styleUrls: ['./cards.component.scss'],
 })
 export class CardsComponent {
-  @Input() albums: Album | any;
+  @Input() cardInformation: Card | any;
 }

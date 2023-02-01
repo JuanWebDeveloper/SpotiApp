@@ -1,4 +1,20 @@
 <spoti-cards
   *ngFor="let album of newAlbumsRelases"
-  [albums]="album"
+  [cardInformation]="{
+    image: album.images,
+    title: album.name,
+    subTitle: {
+      text: 'Relase Date: ',
+      value: album.releaseDate
+    },
+    bodyTitle: {
+      text: 'Album',
+      span: 'Track'
+    },
+    uri: album.uri,
+    footer: {
+      footerTitle: album.artists.length > 1 ? 'Artists' : 'Artist',
+      footerItems: album.artists
+    }
+  }"
 ></spoti-cards>

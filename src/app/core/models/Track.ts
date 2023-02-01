@@ -3,10 +3,5 @@ export interface Track {
   album: number;
   images: string;
   uri: string;
-  artists: [
-    {
-      artistId: string;
-      artistName: string;
-    }
-  ];
+  artists: string[];
 }
