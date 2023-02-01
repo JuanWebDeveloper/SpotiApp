@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CardsComponent } from './shared/cards/cards.component';
 import { SearchComponent } from './pages/search/search.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SearchComponent } from './pages/search/search.component';
     NavbarComponent,
     CardsComponent,
     SearchComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

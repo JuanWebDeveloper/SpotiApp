@@ -59,6 +59,11 @@
             background-color: darken($color: #ededed40, $amount: 0.5);
             color: #1ed760;
           }
+
+          &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+          }
         }
       }
 
@@ -151,6 +156,10 @@
           width: 95%;
         }
       }
+    }
+
+    .search-loading {
+      height: 50vh;
     }
   }
 }

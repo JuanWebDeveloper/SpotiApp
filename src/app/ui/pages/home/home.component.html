@@ -1,20 +1,23 @@
-<spoti-cards
-  *ngFor="let album of newAlbumsRelases"
-  [cardInformation]="{
-    image: album.images,
-    title: album.name,
-    subTitle: {
-      text: 'Relase Date: ',
-      value: album.releaseDate
-    },
-    bodyTitle: {
-      text: 'Album',
-      span: 'Track'
-    },
-    uri: album.uri,
-    footer: {
-      footerTitle: album.artists.length > 1 ? 'Artists' : 'Artist',
-      footerItems: album.artists
-    }
-  }"
-></spoti-cards>
+<spoti-loading *ngIf="loading"></spoti-loading>
+<ng-container *ngIf="!loading">
+  <spoti-cards
+    *ngFor="let album of newAlbumsRelases"
+    [cardInformation]="{
+      image: album.images,
+      title: album.name,
+      subTitle: {
+        text: 'Relase Date: ',
+        value: album.releaseDate
+      },
+      bodyTitle: {
+        text: 'Album',
+        span: 'Track'
+      },
+      uri: album.uri,
+      footer: {
+        footerTitle: album.artists.length > 1 ? 'Artists' : 'Artist',
+        footerItems: album.artists
+      }
+    }"
+  ></spoti-cards>
+</ng-container>

@@ -1,0 +1,26 @@
+.loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+
+  .loading-circle {
+    animation: loading-circle 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    border: 7px solid #1b1b3070;
+    border-top-color: darken($color: #ededed80, $amount: 0.9);
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+  }
+
+  @keyframes loading-circle {
+    0% {
+      transform: rotate3d(0, 0, 25, 0deg);
+    }
+    100% {
+      transform: rotate3d(0, 10, 25, 360deg);
+    }
+  }
+}

@@ -11,10 +11,13 @@ import { Album } from 'src/app/core/models/Album';
 })
 export class HomeComponent {
   public newAlbumsRelases: Album[] = [];
+  public loading: boolean | undefined;
 
   constructor(private spotifyApiService: SpotifyApiService) {
+    this.loading = true;
     this.spotifyApiService.getNewAlbumReleases().subscribe((data: Album[]) => {
       this.newAlbumsRelases = data;
+      // this.loading = false;
     });
   }
 }

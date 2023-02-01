@@ -5,11 +5,13 @@
         <input
           type="text"
           name="search"
+          minlength="1"
+          required
           ngModel
           #search="ngModel"
           [placeholder]="'Search By ' + filterSelected"
         />
-        <button type="submit">Search</button>
+        <button type="submit" [class.disabled]="search.invalid">Search</button>
       </form>
       <div class="search-filters">
         <button
@@ -20,6 +22,10 @@
           {{ filter }}
         </button>
       </div>
+    </div>
+
+    <div class="search-loading" *ngIf="loading">
+      <spoti-loading></spoti-loading>
     </div>
 
     <div class="results-container" *ngIf="searching && !loading">

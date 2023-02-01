@@ -17,13 +17,13 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #1b1b3090;
-  border-radius: 15px;
-  transition: all 0.5s ease-in;
+  background: darken($color: #ededed80, $amount: 0.9);
+  border-radius: 5px;
 }
 
-*:hover::-webkit-scrollbar-thumb {
-  background: #1b1b3055;
+*::selection {
+  color: #ededed;
+  background-color: darken($color: #ededed40, $amount: 0.5);
 }
 
 body {
@@ -32,6 +32,7 @@ body {
 }
 
 main {
-  margin-top: 3rem;
+  margin: 3rem 0;
   padding: 0 1rem;
+  height: calc(100vh - (6rem + 80px));
 }
