@@ -4,4 +4,5 @@ export interface Artist {
   images: string;
   uri: string;
   genres: string[];
+  type?: string;
 }

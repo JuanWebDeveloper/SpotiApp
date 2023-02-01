@@ -1,7 +1,8 @@
 export interface Track {
   name: string;
-  album: number;
+  album: string;
   images: string;
   uri: string;
   artists: string[];
+  type: string;
 }

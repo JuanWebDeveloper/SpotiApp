@@ -10,7 +10,7 @@
     box-shadow: 0 15px 45px rgba($color: #01011860, $alpha: 0.35);
     border-radius: 15px;
     display: flex;
-    min-height: 540px;
+    min-height: 560px;
     overflow: hidden;
     transition: all 0.5s ease-out;
     width: 70%;
@@ -137,6 +137,7 @@
 
       &-footer {
         position: relative;
+        margin-top: 1rem;
 
         .title {
           color: #ededed;

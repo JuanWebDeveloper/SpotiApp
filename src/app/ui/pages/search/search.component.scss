@@ -120,5 +120,37 @@
         }
       }
     }
+
+    .results-container {
+      margin-top: 2rem;
+      position: relative;
+      width: 100%;
+
+      .results-title {
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        position: relative;
+        width: 70%;
+
+        h2 {
+          color: #ededed;
+          font-size: 2rem;
+          font-weight: 400;
+          text-shadow: 0 0 2px #ededed80, 0 0 2px #ededed80;
+
+          span {
+            color: #1ed760;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          width: 90%;
+        }
+
+        @media (max-width: 600px) {
+          width: 95%;
+        }
+      }
+    }
   }
 }

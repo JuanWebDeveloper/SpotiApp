@@ -21,5 +21,85 @@
         </button>
       </div>
     </div>
+
+    <div class="results-container" *ngIf="searching && !loading">
+      <div class="results-title">
+        <h2>
+          Results of the search <span>{{ searchValueContainer }}</span> with the
+          filter
+          <span>{{ filterValueContainer }}</span>
+        </h2>
+      </div>
+
+      <ng-container *ngIf="albumResponsesContainer.length > 1">
+        <spoti-cards
+          *ngFor="let album of albumResponsesContainer"
+          [cardInformation]="{
+            image: album.images,
+            title: album.name,
+            subTitle: {
+              text: 'Relase Date: ',
+              value: album.releaseDate
+            },
+            bodyTitle: {
+              text: 'Album',
+              span: 'Track'
+            },
+            uri: album.uri,
+            footer: {
+              footerTitle: album.artists.length > 1 ? 'Artists' : 'Artist',
+              footerItems: album.artists
+            }
+          }"
+        ></spoti-cards>
+      </ng-container>
+
+      <ng-container *ngIf="artistResponsesContainer.length > 1">
+        <spoti-cards
+          *ngFor="let artist of artistResponsesContainer"
+          [cardInformation]="{
+            image: artist.images,
+            title: artist.name,
+            subTitle: {
+              text: 'Followers:',
+              value: artist.followers
+            },
+            bodyTitle: {
+              text: 'Artist',
+              span: 'Track'
+            },
+            uri: artist.uri,
+            footer: {
+              footerTitle: artist.genres.length > 1 ? 'Genres' : 'Genre',
+              footerItems:
+                artist.genres.length > 1 ? artist.genres : ['Unspecified genre']
+            }
+          }"
+        ></spoti-cards>
+      </ng-container>
+
+      <ng-container *ngIf="trackResponsesContainer.length > 1">
+        <spoti-cards
+          *ngFor="let track of trackResponsesContainer"
+          [cardInformation]="{
+            image: track.images,
+            title: track.name,
+            subTitle: {
+              text: 'Album: ',
+              value: track.album
+            },
+            bodyTitle: {
+              text: '',
+              span: 'Track'
+            },
+            uri: track.uri,
+            footer: {
+              footerTitle: track.artists.length > 1 ? 'Artists' : 'Artist',
+              footerItems: track.artists
+            }
+          }"
+        ></spoti-cards>
+      </ng-container>
+    </div>
   </div>
 </div>

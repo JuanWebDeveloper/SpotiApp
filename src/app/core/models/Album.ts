@@ -4,4 +4,5 @@ export interface Album {
   images: string;
   uri: string;
   artists: string[];
+  type?: string;
 }
