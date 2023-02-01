@@ -28,7 +28,15 @@
       <spoti-loading></spoti-loading>
     </div>
 
-    <div class="results-container" *ngIf="searching && !loading">
+    <div class="alert mt" *ngIf="thereErrors && !loading">
+      <h3>Error</h3>
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div
+      class="results-container"
+      *ngIf="searching && !loading && !thereErrors"
+    >
       <div class="results-title">
         <h2>
           Results of the search <span>{{ searchValueContainer }}</span> with the

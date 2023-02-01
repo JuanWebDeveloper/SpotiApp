@@ -1,5 +1,11 @@
 <spoti-loading *ngIf="loading"></spoti-loading>
-<ng-container *ngIf="!loading">
+
+<div class="alert" *ngIf="thereErrors && !loading">
+  <h3>Error</h3>
+  <p>{{ errorMessage }}</p>
+</div>
+
+<ng-container *ngIf="!loading && !thereErrors">
   <spoti-cards
     *ngFor="let album of newAlbumsRelases"
     [cardInformation]="{

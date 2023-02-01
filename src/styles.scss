@@ -36,3 +36,36 @@ main {
   padding: 0 1rem;
   height: calc(100vh - (6rem + 80px));
 }
+
+.mt {
+  margin-top: 1rem;
+}
+
+.alert {
+  animation: scale-in_XY 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  background-color: #f0101070;
+  border-radius: 5px;
+  color: #ededed;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+@keyframes scale-in_XY {
+  0% {
+    transform: scaleX(0.1) scaleY(0.1);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}

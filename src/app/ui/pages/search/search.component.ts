@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
   public trackResponsesContainer: Album[] | Artist[] | Track[] | any = [];
   public loading: boolean | undefined;
   public searching: boolean = false;
+  public thereErrors: boolean | undefined;
+  public errorMessage: string | undefined;
 
   constructor(private spotifyApiService: SpotifyApiService) {}
 
@@ -50,22 +52,30 @@ export class SearchComponent implements OnInit {
     this.albumResponsesContainer = [];
     this.artistResponsesContainer = [];
     this.trackResponsesContainer = [];
+    this.thereErrors = false;
 
     this.spotifyApiService
       .fetchSearchResults(
         search.toLowerCase(),
         this.filterSelected.toLowerCase()
       )
-      .subscribe((data) => {
-        if (data[0].type === 'album') {
-          this.albumResponsesContainer = data;
-        } else if (data[0].type === 'artist') {
-          this.artistResponsesContainer = data;
-        } else {
-          this.trackResponsesContainer = data;
+      .subscribe(
+        (data) => {
+          if (data[0].type === 'album') {
+            this.albumResponsesContainer = data;
+          } else if (data[0].type === 'artist') {
+            this.artistResponsesContainer = data;
+          } else {
+            this.trackResponsesContainer = data;
+          }
+          this.loading = false;
+          this.searching = true;
+        },
+        ({ error }) => {
+          this.loading = false;
+          this.thereErrors = true;
+          this.errorMessage = error.error.message;
         }
-        this.loading = false;
-        this.searching = true;
-      });
+      );
   }
 }
