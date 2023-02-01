@@ -17,7 +17,10 @@ export class SpotifyApiMapper {
     return {
       name: album.name,
       releaseDate: album.release_date,
-      images: album.images[0].url,
+      images:
+        album.images.length > 1
+          ? album.images[0].url
+          : 'assets/img/emptyImage.png',
       uri: album.uri,
       artists: album.artists.map((artist: any) => {
         return {
@@ -46,7 +49,10 @@ export class SpotifyApiMapper {
     return {
       name: artist.name,
       followers: artist.followers.total,
-      images: artist.images[0].url,
+      images:
+        artist.images.length > 1
+          ? artist.images[0].url
+          : 'assets/img/emptyImage.png',
       uri: artist.uri,
       genres: artist.genres.map((genre: any) => genre),
     };
@@ -70,7 +76,10 @@ export class SpotifyApiMapper {
     return {
       name: track.name,
       album: track.album.name,
-      images: track.album.images[0].url,
+      images:
+        track.album.images.length > 1
+          ? track.album.images[0].url
+          : 'assets/img/emptyImage.png',
       uri: track.uri,
       artists: track.artists.map((artist: any) => {
         return {

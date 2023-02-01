@@ -31,12 +31,14 @@ export class SearchComponent implements OnInit {
    * @param formSearch
    * @returns Search results
    */
-  performSearch(formSearch: NgForm) {
+  performSearch(formSearch: NgForm): void {
     const { search } = formSearch.value;
 
-    this.spotifyApiService.fetchSearchResults(
-      search.toLowerCase(),
-      this.filterSelected.toLowerCase()
-    );
+    this.spotifyApiService
+      .fetchSearchResults(
+        search.toLowerCase(),
+        this.filterSelected.toLowerCase()
+      )
+      .subscribe((data) => console.log(data));
   }
 }

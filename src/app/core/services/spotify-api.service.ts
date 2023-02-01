@@ -23,7 +23,7 @@ export class SpotifyApiService {
 
     const headers: HttpHeaders = new HttpHeaders({
       Authorization:
-        'Bearer BQC2fkgxqwAYN7Au0DeKyorpIM89X7tVujLtvYAkN4PVi8NKcAv7aCH3K_eP1mMYvBdvII978Kdmg2ubsEPE-yT3W-uZYuXlUyjrJsfUawuFA6x1UAts',
+        'Bearer BQBtJfjOuG9bGmm9bWfa_1l80DVznFQx26uzxMe1OiGebHeDuBRnwGKVveq6D3nbsSELjXMcj7SjU4rRdXkJedfsX2IHGLdK9rZ_VOi3VF_NOIjcWsol',
     });
 
     return this.http.get(rootUrl + queryParams, { headers });
@@ -50,8 +50,16 @@ export class SpotifyApiService {
   public fetchSearchResults(userSearch: string, searchFilter: string) {
     return this.query(
       `search?q=${userSearch}&type=${searchFilter}&limit=21`
-    ).subscribe((results) => {
-      console.log(results);
-    });
+    ).pipe(
+      map((res: any) => {
+        if (searchFilter === 'album') {
+          return this.spotifyApiMapper.mapAlbumsInformation(res.albums.items);
+        } else if (searchFilter === 'artist') {
+          return this.spotifyApiMapper.mapArtistsData(res.artists.items);
+        } else {
+          return this.spotifyApiMapper.mapTracksInformation(res.tracks.items);
+        }
+      })
+    );
   }
 }
