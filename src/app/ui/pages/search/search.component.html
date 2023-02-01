@@ -1,7 +1,11 @@
 <div class="search">
   <div class="content">
     <div class="finder-container">
-      <form #formSearch="ngForm" (ngSubmit)="performSearch(formSearch)">
+      <form
+        autocomplete="off"
+        #formSearch="ngForm"
+        (ngSubmit)="performSearch(formSearch)"
+      >
         <input
           type="text"
           name="search"

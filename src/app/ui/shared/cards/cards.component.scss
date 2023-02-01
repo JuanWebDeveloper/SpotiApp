@@ -6,6 +6,7 @@
   width: 100%;
 
   .card {
+    animation: scale-in_XY 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     background-color: #1b1b3090;
     box-shadow: 0 15px 45px rgba($color: #01011860, $alpha: 0.35);
     border-radius: 15px;
