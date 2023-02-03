@@ -5,6 +5,7 @@ import { LayoutComponent } from './ui/layout/layout.component';
 import { NavbarComponent } from './ui/shared/navbar/navbar.component';
 import { HomeComponent } from './ui/pages/home/home.component';
 import { SearchComponent } from './ui/pages/search/search.component';
+import { ArtistComponent } from './ui/pages/artist/artist.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,14 @@ const routes: Routes = [
     children: [
       { path: '', component: NavbarComponent, outlet: 'navbar' },
       { path: '', component: SearchComponent },
+    ],
+  },
+  {
+    path: 'artist',
+    component: LayoutComponent,
+    children: [
+      { path: '', component: NavbarComponent, outlet: 'navbar' },
+      { path: '', component: ArtistComponent },
     ],
   },
   { path: '', pathMatch: 'full', redirectTo: 'home' },

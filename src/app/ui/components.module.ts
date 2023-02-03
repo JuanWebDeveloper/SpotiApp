@@ -14,6 +14,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CardsComponent } from './shared/cards/cards.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { ArtistComponent } from './pages/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
     CardsComponent,
     SearchComponent,
     LoadingComponent,
+    ArtistComponent,
   ],
   imports: [
     BrowserModule,
