@@ -36,7 +36,10 @@
         </h3>
         <ul class="list-artists">
           <li *ngFor="let item of cardInformation.footer.footerItems">
-            {{ item }}
+            <a *ngIf="item.artistId" routerLink="/artist/{{ item.artistId }}">
+              {{ item.artistName }}
+            </a>
+            <span *ngIf="!item.artistId">{{ item }}</span>
           </li>
         </ul>
       </div>

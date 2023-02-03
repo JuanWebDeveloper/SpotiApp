@@ -157,19 +157,27 @@
             background-color: #01011880;
             border-radius: 5px;
             cursor: pointer;
-            color: #ededed;
             font-size: 1.25rem;
             font-weight: 400;
             margin: 0.5rem 0.5rem;
             padding: 0.3rem 1rem;
-            text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
             transition: all 0.3s ease-in;
 
             &:hover {
               background-color: #1b1b30;
-              color: #1ed760;
-              text-shadow: 0 0 3px #1ed76080, 0 0 3px #1ed76080;
               transform: scale(1.09);
+            }
+
+            span,
+            a {
+              color: #ededed;
+              text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
+              transition: all 0.3s ease-in;
+
+              &:hover {
+                color: #1ed760;
+                text-shadow: 0 0 3px #1ed76080, 0 0 3px #1ed76080;
+              }
             }
           }
         }
