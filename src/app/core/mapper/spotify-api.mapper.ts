@@ -22,7 +22,12 @@ export class SpotifyApiMapper {
           ? album.images[0].url
           : 'assets/img/emptyImage.png',
       uri: album.uri,
-      artists: album.artists.map((artist: any) => artist.name),
+      artists: album.artists.map((artist: any) => [
+        {
+          artistId: artist.id,
+          artistName: artist.name,
+        },
+      ]),
       type: 'album',
     };
   }
@@ -78,7 +83,12 @@ export class SpotifyApiMapper {
           ? track.album.images[0].url
           : 'assets/img/emptyImage.png',
       uri: track.uri,
-      artists: track.artists.map((artist: any) => artist.name),
+      artists: track.artists.map((artist: any) => [
+        {
+          artistId: artist.id,
+          artistName: artist.name,
+        },
+      ]),
       type: 'track',
     };
   }

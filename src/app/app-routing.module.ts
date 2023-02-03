@@ -25,7 +25,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'artist',
+    path: 'artist/:artistId',
     component: LayoutComponent,
     children: [
       { path: '', component: NavbarComponent, outlet: 'navbar' },

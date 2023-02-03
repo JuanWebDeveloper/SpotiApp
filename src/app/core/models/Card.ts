@@ -12,6 +12,11 @@ export interface Card {
   uri: string;
   footer: {
     footerTitle: string;
-    footerItems: string[];
+    footerItems: [
+      {
+        itemName: string;
+        itemId?: string;
+      }
+    ];
   };
 }
