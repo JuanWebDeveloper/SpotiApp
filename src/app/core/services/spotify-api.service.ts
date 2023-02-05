@@ -23,7 +23,7 @@ export class SpotifyApiService {
 
     const headers: HttpHeaders = new HttpHeaders({
       Authorization:
-        'Bearer BQDirXoLycdGoPcxU8pHvcRP38D-_gCzWSIIgSDMSL2R6RWL7GDBYSV-SlhxnFsD10Lg8v-v5xL-mewsTrovhU_IEp08J4KGubZZEepN9UeEDvC9sJAr',
+        'Bearer BQABCWIrrFrdxWfrhuVF5aHQ-eR_wljzlVrcrX6mKaNbhb6r_8FXNAdKP2RhVKBhFqytS1DZARW3rzQMkvs6Dbw801xW7tOQdY0rGD1gwJ_NXW0m1q0o',
     });
 
     return this.http.get(rootUrl + queryParams, { headers });
@@ -60,6 +60,17 @@ export class SpotifyApiService {
           return this.spotifyApiMapper.mapTracksInformation(res.tracks.items);
         }
       })
+    );
+  }
+
+  /**
+   * Bring information of an artist by his id
+   * @param artistId
+   * @returns Artist information
+   */
+  public getArtistById(artistId: string) {
+    return this.query(`artists/${artistId}`).pipe(
+      map((res: any) => this.spotifyApiMapper.mapArtist(res))
     );
   }
 }
