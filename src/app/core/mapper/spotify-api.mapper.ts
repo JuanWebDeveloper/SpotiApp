@@ -49,7 +49,7 @@ export class SpotifyApiMapper {
       name: artist.name,
       followers: artist.followers.total,
       popularity: artist.popularity,
-      externalUrl: artist.external_urls,
+      externalUrl: artist.external_urls.spotify,
       images:
         artist.images.length > 1
           ? artist.images[0].url

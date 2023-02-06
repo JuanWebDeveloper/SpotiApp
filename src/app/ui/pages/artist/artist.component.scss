@@ -1,0 +1,139 @@
+.artist {
+  position: relative;
+  width: 100vw;
+
+  .content {
+    position: relative;
+    padding: 0 1rem;
+    width: 100%;
+
+    .artist-information {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+
+      .image {
+        background-attachment: fixed;
+        height: 500px;
+        position: relative;
+        width: 50%;
+
+        img {
+          border-radius: 50px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .information {
+        background-color: #1b1b3090;
+        position: relative;
+        padding: 1rem 0;
+        text-align: center;
+        width: 50%;
+
+        h2 {
+          color: #ededed;
+          font-size: 3rem;
+          text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
+        }
+
+        h3 {
+          color: #1ed760;
+          font-size: 2.5rem;
+          margin-top: 0.5rem;
+          text-shadow: 0 0 3px #1ed76080, 0 0 3px #1ed76080;
+
+          span {
+            color: #ededed;
+            text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
+          }
+        }
+
+        .genres {
+          h3 {
+            margin-bottom: 1rem;
+          }
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            width: 90%;
+
+            li {
+              background-color: darken($color: #1b1b3090, $amount: 10);
+              border-radius: 15px;
+              color: #ededed;
+              font-size: 1rem;
+              margin-bottom: 1rem;
+              margin-right: 1rem;
+              padding: 0.5rem 1rem;
+              text-shadow: 0 0 3px #ededed80, 0 0 3px #ededed80;
+              text-transform: capitalize;
+              transition: all 0.3s ease-out;
+
+              &:last-child {
+                margin-right: 0;
+              }
+
+              &:hover {
+                background-color: darken($color: #1b1b3090, $amount: 15);
+                transform: scale(1.08);
+              }
+            }
+          }
+        }
+
+        a {
+          color: #1ed760;
+          font-size: 1.5rem;
+          font-weight: 400;
+          text-shadow: 0 0 3px #1ed76080, 0 0 3px #1ed76080;
+          text-transform: capitalize;
+          transition: all 0.3s ease-out;
+
+          &:hover {
+            color: darken($color: #1ed760, $amount: 15);
+            text-shadow: 0 0 3px darken($color: #1ed76080, $amount: 15),
+              0 0 3px darken($color: #1ed76080, $amount: 15);
+          }
+        }
+      }
+
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .image {
+          width: 95%;
+          margin-bottom: 1rem;
+
+          img {
+            border-radius: 5px;
+          }
+        }
+
+        .information {
+          width: 95%;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .information {
+          h2 {
+            font-size: 2rem;
+            font-weight: 400;
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

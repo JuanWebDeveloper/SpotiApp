@@ -1,1 +1,24 @@
-<p>artist works!</p>
+<div class="artist">
+  <div class="content">
+    <div class="artist-information">
+      <div class="image">
+        <img [src]="artistData?.images" [alt]="artistData?.name" />
+      </div>
+
+      <div class="information">
+        <h2>{{ artistData?.name }}</h2>
+        <h3><span>Followers:</span> {{ artistData?.followers | number }}</h3>
+        <h3><span>Artist Popularity:</span> {{ artistData?.popularity }}</h3>
+        <div class="genres">
+          <h3><span>Genres Of Artists</span></h3>
+          <ul>
+            <li *ngFor="let genres of artistData?.genres">{{ genres }}</li>
+          </ul>
+        </div>
+        <a [href]="artistData?.externalUrl" target="_blank">
+          Visit the artist page
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

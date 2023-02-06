@@ -11,6 +11,8 @@ import { Artist } from 'src/app/core/models/Artist';
   styleUrls: ['./artist.component.scss'],
 })
 export class ArtistComponent {
+  public artistData: Artist | undefined;
+
   constructor(
     private router: ActivatedRoute,
     private spotifyApiService: SpotifyApiService
@@ -18,9 +20,7 @@ export class ArtistComponent {
     this.router.params.subscribe((params) => {
       this.spotifyApiService
         .getArtistById(params['artistId'])
-        .subscribe((artist: Artist) => {
-          console.log(artist);
-        });
+        .subscribe((artist: Artist) => (this.artistData = artist));
     });
   }
 }
